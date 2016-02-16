@@ -35,6 +35,11 @@ function wrapped(fn) {
       return done.apply(ctx, [null].concat(args));
     }
 
+    // generator
+    if (generator(fn)) {
+      return co(fn).apply(ctx, args.concat(done));
+    }
+
     // async
     if (fn.length > args.length) {
       // NOTE: this only handles uncaught synchronous errors
@@ -43,11 +48,6 @@ function wrapped(fn) {
       } catch (e) {
         return done(e);
       }
-    }
-
-    // generator
-    if (generator(fn)) {
-      return co(fn).apply(ctx, args.concat(done));
     }
 
     // sync
