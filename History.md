@@ -1,4 +1,10 @@
 
+1.0.1 / 2016-02-16
+==================
+
+  * move generator check above to prevent generators for being mistaken as async functions
+  * remove unused function
+
 0.1.4 / 2015-01-21
 ==================
 

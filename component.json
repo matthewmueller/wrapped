@@ -1,6 +1,6 @@
 {
   "name": "wrapped",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "support sync, async, and generator functions",
   "dependencies": {
     "tj/co": "3.1.0",
