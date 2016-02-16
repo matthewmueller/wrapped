@@ -110,19 +110,3 @@ function generator(value) {
 function promise(value) {
   return value && 'function' == typeof value.then;
 }
-
-/**
- * Determi
- */
-
-/**
- * Once
- */
-
-function once(fn) {
-  return function() {
-    var ret = fn.apply(this, arguments);
-    fn = noop;
-    return ret;
-  };
-}
